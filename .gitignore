@@ -5,3 +5,7 @@ Thumbs.db
 *.log
 .env
 .env.local
+.claude/
+ATLAS-HUB-ROTATE.mp4
+ATLAS-HUB-THANKS.mp4
+ATLAS-HUB-COMPO.jpg
