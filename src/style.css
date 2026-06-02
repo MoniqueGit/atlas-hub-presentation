@@ -687,8 +687,50 @@ body.present-mode .thanks-inner {
    SECTION 4 — TECHNICAL + CUTAWAY
    ═══════════════════════════════════════════════════════ */
 .section-technical { align-items: flex-start; padding-top: 100px; }
-.section-pipeline  { align-items: flex-start; padding-top: 100px; }
-body.present-mode .section-pipeline { padding-top: 36px; }
+.section-pipeline  { align-items: flex-start; padding-top: 72px; }
+body.present-mode .section-pipeline { padding-top: 28px; }
+
+/* ── Pipeline slide — enlarged nodes & diagram ────── */
+#pipeline .arch-diagram {
+  gap: 32px;
+  padding: 52px 40px 44px;
+  margin-bottom: 0;
+}
+#pipeline .arch-row { gap: 10px; }
+#pipeline .arch-row-label {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  color: rgba(255,255,255,0.30);
+}
+#pipeline .arch-node {
+  min-width: 116px;
+  padding: 20px 16px;
+  gap: 8px;
+  border-radius: 14px;
+}
+#pipeline .arch-label {
+  font-size: 14px;
+  letter-spacing: 0.10em;
+}
+#pipeline .arch-sublabel {
+  font-size: 12px;
+}
+#pipeline .arch-node svg {
+  width: 22px;
+  height: 22px;
+}
+#pipeline .arch-robot-center {
+  min-width: 120px;
+  padding: 22px 24px;
+  gap: 10px;
+  border-radius: 18px;
+}
+#pipeline .arch-robot-head  { width: 36px; height: 22px; }
+#pipeline .arch-robot-body  { width: 30px; height: 26px; }
+#pipeline .arch-wheel       { width: 16px; height: 10px; }
+#pipeline .arch-robot-leds  { width: 28px; height: 3px; margin-top: 4px; }
+#pipeline .arch-arrow       { width: 64px; height: 24px; }
+#pipeline .arch-arrow svg   { height: 24px; }
 .tech-split { display: grid; grid-template-columns: 1fr 1fr 260px; gap: 40px; width: 100%; }
 
 .tech-components { display: flex; flex-direction: column; gap: 10px; }
