@@ -200,5 +200,5 @@
 
 ---
 
-*Atlas Agency · IUT Montpellier-Sète · GEII/ESE · 2026*  
+*Atlas Stay · IUT Montpellier-Sète · GEII/ESE · 2026*  
 *atlastheone.xyz*
