@@ -15,10 +15,14 @@
       </filter>
     </defs>
   </svg>
-  <script type="module" crossorigin src="/atlas-hub-presentation/assets/index-XNwyOSOv.js"></script>
-  <link rel="stylesheet" crossorigin href="/atlas-hub-presentation/assets/index-DxZpTW3B.css">
+  <script type="module" crossorigin src="/atlas-hub-presentation/assets/index-CzXcA8Au.js"></script>
+  <link rel="stylesheet" crossorigin href="/atlas-hub-presentation/assets/index-BFxivRUE.css">
 </head>
 <body>
+
+<!-- ── Global neural network background canvas ────── -->
+<canvas id="bgCanvas" aria-hidden="true"></canvas>
+<div class="grid-overlay" aria-hidden="true"></div>
 
 <div class="grain-overlay" aria-hidden="true"></div>
 <div class="cursor"     id="cursor"    aria-hidden="true"></div>
@@ -43,7 +47,7 @@
 <nav id="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="#hero" class="nav-logo" aria-label="Atlas Hub home">
-      <span class="logo-atlas">Atlas</span><span class="logo-agency">Agency</span>
+      <span class="logo-atlas">Atlas</span><span class="logo-agency">Stay</span>
     </a>
     <div class="nav-links">
       <a href="#hero"      class="nav-link" data-section="0">Overview</a>
@@ -78,10 +82,27 @@
   <div class="hero-glow" aria-hidden="true"></div>
 
   <div class="hero-content">
-    <p class="eyebrow">Atlas Agency · Engineering Project 2026</p>
+    <p class="eyebrow">Atlas Stay · Engineering Project 2026</p>
     <div class="badge-pill">
       <span class="badge-dot" aria-hidden="true"></span>
       Introducing Atlas Hub
+    </div>
+
+    <div class="hero-system-bar" aria-hidden="true">
+      <span class="sbar-item">
+        <span class="sbar-dot sbar-dot-green"></span>
+        <span>ESP32-S3 · 240MHz</span>
+      </span>
+      <span class="sbar-divider">·</span>
+      <span class="sbar-item">
+        <span class="sbar-dot sbar-dot-blue"></span>
+        <span>LEA AI · v2.3</span>
+      </span>
+      <span class="sbar-divider">·</span>
+      <span class="sbar-item">
+        <span class="sbar-dot sbar-dot-green"></span>
+        <span>50+ Languages · ONLINE</span>
+      </span>
     </div>
 
     <h1 class="hero-title">
@@ -169,13 +190,13 @@
 
     <!-- Consequence fact strip -->
     <div class="consequence-row">
-      <div class="consequence-card">
+      <div class="consequence-card" data-tilt data-tilt-max="7" data-tilt-speed="400">
         <div class="conseq-stat">38<span class="conseq-pct">%</span></div>
         <div class="conseq-body">
           <p class="conseq-title">of bad reviews caused by check-in problems</p>
         </div>
       </div>
-      <div class="consequence-card">
+      <div class="consequence-card" data-tilt data-tilt-max="7" data-tilt-speed="400">
         <div class="conseq-icon-wrap">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         </div>
@@ -183,7 +204,7 @@
           <p class="conseq-title">No existing solution works at 3AM</p>
         </div>
       </div>
-      <div class="consequence-card">
+      <div class="consequence-card" data-tilt data-tilt-max="7" data-tilt-speed="400">
         <div class="conseq-stat conseq-stat-purple">67<span class="conseq-pct">%</span></div>
         <div class="conseq-body">
           <p class="conseq-title">of complaints happen between 10PM and 8AM</p>
@@ -408,19 +429,19 @@
 
     <!-- 4 big stat cards -->
     <div class="biz-stats-row">
-      <div class="biz-stat-card">
+      <div class="biz-stat-card" data-tilt data-tilt-max="6" data-tilt-speed="400">
         <span class="stat-big amber" data-count-text="15M+">0</span>
         <span class="stat-label-sm">Short-term rentals in Europe</span>
       </div>
-      <div class="biz-stat-card">
+      <div class="biz-stat-card" data-tilt data-tilt-max="6" data-tilt-speed="400">
         <span class="stat-big emerald" data-count-text="+0.4★">0</span>
         <span class="stat-label-sm">Average Airbnb rating boost</span>
       </div>
-      <div class="biz-stat-card">
+      <div class="biz-stat-card" data-tilt data-tilt-max="6" data-tilt-speed="400">
         <span class="stat-big white" data-count-text="↓82%">0</span>
         <span class="stat-label-sm">Host workload at night</span>
       </div>
-      <div class="biz-stat-card">
+      <div class="biz-stat-card" data-tilt data-tilt-max="6" data-tilt-speed="400">
         <span class="stat-big emerald" data-count-text="+28%">0</span>
         <span class="stat-label-sm">Booking increase per ½ star</span>
       </div>
@@ -473,7 +494,7 @@
       </div>
 
       <!-- Pricing card -->
-      <div class="pricing-card">
+      <div class="pricing-card" data-tilt data-tilt-max="5" data-tilt-speed="500" data-tilt-glare="true" data-tilt-max-glare="0.08">
         <p class="pricing-eyebrow">Pricing</p>
         <div class="pricing-main">
           <span class="pricing-amount">€1 500</span>
@@ -506,7 +527,7 @@
 <section id="thanks" class="section section-thanks" aria-labelledby="thanks-heading">
   <div class="thanks-inner">
     <div class="thanks-text">
-      <p class="eyebrow eyebrow-emerald">Atlas Agency · 2026</p>
+      <p class="eyebrow eyebrow-emerald">Atlas Stay · 2026</p>
       <h2 id="thanks-heading" class="thanks-title">Thank you.</h2>
       <p class="thanks-sub">Youri Figuié &amp; Luis Causse · IUT Montpellier-Sète · GEII/ESE</p>
     </div>
@@ -523,6 +544,6 @@
     </div>
   </div>
 </section>
-
+
 </body>
 </html>
