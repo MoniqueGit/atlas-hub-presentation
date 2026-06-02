@@ -83,7 +83,7 @@ export function initAnimations() {
     }
   })
 
-  /* ── Technical cutaway animation ─────────────── */
+  /* ── Technical architecture + pipeline animation ─ */
   ScrollTrigger.create({
     trigger: '#technical',
     start: 'top 70%',
@@ -94,13 +94,25 @@ export function initAnimations() {
         { opacity: 1, y: 0, duration: .6, ease: 'power2.out', stagger: .1 }
       )
 
-      // Arch diagram nodes fade in
-      gsap.fromTo('.arch-node, .arch-robot-center',
+      // Arch diagram container slides in
+      gsap.fromTo('.arch-diagram',
         { opacity: 0, y: 16 },
-        { opacity: 1, y: 0, duration: .5, ease: 'power2.out', stagger: .07, delay: .2 }
+        { opacity: 1, y: 0, duration: .6, ease: 'power2.out', delay: .2 }
       )
 
-      // Arch arrows draw in sequentially
+      // Row labels fade in
+      gsap.fromTo('.arch-row-label',
+        { opacity: 0 },
+        { opacity: 1, duration: .4, ease: 'power2.out', stagger: .15, delay: .35 }
+      )
+
+      // Pipeline nodes appear staggered
+      gsap.fromTo('.arch-node, .arch-robot-center',
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: .5, ease: 'power2.out', stagger: .06, delay: .4 }
+      )
+
+      // Arrows draw in sequentially (stroke-dashoffset 60 → 0)
       for (let d = 0; d <= 5; d++) {
         const paths = document.querySelectorAll(`.arch-arrow[data-arch-delay="${d}"] .arch-path`)
         if (paths.length) {
@@ -108,38 +120,20 @@ export function initAnimations() {
             attr: { 'stroke-dashoffset': 0 },
             duration: .45,
             ease: 'power2.out',
-            delay: .5 + d * 0.18
+            delay: .55 + d * 0.16
           })
         }
       }
 
-      gsap.fromTo('.component-card',
-        { opacity: 0, x: -20 },
-        { opacity: 1, x: 0, duration: .55, ease: 'power2.out', stagger: .1, delay: .2 }
+      // Component list + image
+      gsap.fromTo('.compo-item',
+        { opacity: 0, x: -16 },
+        { opacity: 1, x: 0, duration: .5, ease: 'power2.out', stagger: .08, delay: .3 }
       )
-
-      // Cutaway SVG: reveal parts by data-delay
-      const delays = [0, 1, 2, 3, 4, 5, 6]
-      delays.forEach(d => {
-        const parts  = document.querySelectorAll(`.cutaway-part[data-delay="${d}"]`)
-        const lines  = document.querySelectorAll(`.cutaway-line[data-delay="${d}"]`)
-        const labels = document.querySelectorAll(`.cutaway-label[data-delay="${d}"]`)
-        const delay  = 0.4 + d * 0.18
-
-        if (parts.length)  gsap.to(parts,  { opacity: 1, duration: .5, ease: 'power2.out', delay })
-        if (lines.length)  gsap.to(lines,  { strokeDashoffset: 0, duration: .6, ease: 'power2.out', delay: delay + .1 })
-        if (labels.length) gsap.to(labels, { opacity: 1, duration: .4, ease: 'power2.out', delay: delay + .25 })
-      })
-
-      // LEDs pulse in
-      gsap.to('.cutaway-led', {
-        opacity: 1, duration: .3, stagger: .08, delay: 1.6, ease: 'power2.out',
-        onComplete: () => {
-          document.querySelectorAll('.cutaway-led').forEach((led, i) => {
-            led.style.animation = `led-glow 1.8s ease-in-out ${i * 0.2}s infinite`
-          })
-        }
-      })
+      gsap.fromTo('.compo-img',
+        { opacity: 0, scale: .97 },
+        { opacity: 1, scale: 1, duration: .7, ease: 'power2.out', delay: .25 }
+      )
     }
   })
 

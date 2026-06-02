@@ -470,6 +470,50 @@ body {
   background: #07090f;
 }
 
+/* ── Tech section header ──────────────────────────────── */
+.tech-header { margin-bottom: 24px; }
+.tech-header .section-title { margin-bottom: 0; }
+
+/* ── Arch pipeline path (stroke draw-in animation) ───── */
+.arch-path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+}
+
+/* ── Pipeline row labels ──────────────────────────────── */
+.arch-row-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.20);
+  padding-left: 6px;
+  margin-bottom: -8px;
+}
+
+/* ── LEA AI node ─────────────────────────────────────── */
+.arch-node-lea {
+  border-color: rgba(16,185,129,0.40) !important;
+  background: rgba(16,185,129,0.08) !important;
+  box-shadow: 0 0 20px rgba(16,185,129,0.10);
+}
+.arch-label-lea { color: var(--emerald) !important; }
+
+/* ── Navigation ESP32 (amber) ────────────────────────── */
+.arch-robot-nav {
+  border-color: rgba(245,158,11,0.38) !important;
+  background: rgba(245,158,11,0.06) !important;
+}
+.arch-robot-nav .arch-robot-head,
+.arch-robot-nav .arch-robot-body {
+  border-color: rgba(245,158,11,0.50) !important;
+  background: rgba(245,158,11,0.18) !important;
+}
+.arch-robot-nav .arch-robot-leds {
+  background: linear-gradient(90deg, transparent, #f59e0b, transparent) !important;
+}
+
 /* ── Tech section layout ──────────────────────────────── */
 .tech-layout {
   display: grid;
@@ -477,6 +521,7 @@ body {
   gap: 52px;
   align-items: center;
   width: 100%;
+  margin-top: 24px;
 }
 
 /* Component image — no blue border, just shadow */
