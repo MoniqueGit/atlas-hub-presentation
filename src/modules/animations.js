@@ -83,7 +83,7 @@ export function initAnimations() {
     }
   })
 
-  /* ── Technical architecture + pipeline animation ─ */
+  /* ── Technical section (components only) ─────── */
   ScrollTrigger.create({
     trigger: '#technical',
     start: 'top 70%',
@@ -93,26 +93,39 @@ export function initAnimations() {
         { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: .6, ease: 'power2.out', stagger: .1 }
       )
+      gsap.fromTo('.compo-item',
+        { opacity: 0, x: -16 },
+        { opacity: 1, x: 0, duration: .5, ease: 'power2.out', stagger: .08, delay: .3 }
+      )
+      gsap.fromTo('.compo-img',
+        { opacity: 0, scale: .97 },
+        { opacity: 1, scale: 1, duration: .7, ease: 'power2.out', delay: .2 }
+      )
+    }
+  })
 
-      // Arch diagram container slides in
+  /* ── Pipeline section (arch diagram) ─────────── */
+  ScrollTrigger.create({
+    trigger: '#pipeline',
+    start: 'top 70%',
+    once: true,
+    onEnter: () => {
+      gsap.fromTo(['#pipeline .eyebrow', '#pipeline .section-title'],
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: .6, ease: 'power2.out', stagger: .1 }
+      )
       gsap.fromTo('.arch-diagram',
         { opacity: 0, y: 16 },
         { opacity: 1, y: 0, duration: .6, ease: 'power2.out', delay: .2 }
       )
-
-      // Row labels fade in
       gsap.fromTo('.arch-row-label',
         { opacity: 0 },
         { opacity: 1, duration: .4, ease: 'power2.out', stagger: .15, delay: .35 }
       )
-
-      // Pipeline nodes appear staggered
       gsap.fromTo('.arch-node, .arch-robot-center',
         { opacity: 0, y: 14 },
         { opacity: 1, y: 0, duration: .5, ease: 'power2.out', stagger: .06, delay: .4 }
       )
-
-      // Arrows draw in sequentially (stroke-dashoffset 60 → 0)
       for (let d = 0; d <= 5; d++) {
         const paths = document.querySelectorAll(`.arch-arrow[data-arch-delay="${d}"] .arch-path`)
         if (paths.length) {
@@ -124,16 +137,6 @@ export function initAnimations() {
           })
         }
       }
-
-      // Component list + image
-      gsap.fromTo('.compo-item',
-        { opacity: 0, x: -16 },
-        { opacity: 1, x: 0, duration: .5, ease: 'power2.out', stagger: .08, delay: .3 }
-      )
-      gsap.fromTo('.compo-img',
-        { opacity: 0, scale: .97 },
-        { opacity: 1, scale: 1, duration: .7, ease: 'power2.out', delay: .25 }
-      )
     }
   })
 
@@ -198,8 +201,8 @@ export function initAnimations() {
   })
 
   /* ── Nav dots + progress bar ──────────────────── */
-  const sectionIds    = ['hero','problem','robot','technical','demo','business','thanks']
-  const sectionLabels = ['Overview','Problem','Concept','Tech','Demo','Impact','Thank You']
+  const sectionIds    = ['hero','problem','robot','technical','pipeline','demo','business','thanks']
+  const sectionLabels = ['Overview','Problem','Concept','Tech','Pipeline','Demo','Impact','Thank You']
   const dots          = document.querySelectorAll('.nav-dot')
   const navLinks      = document.querySelectorAll('.nav-link')
   const sectionLabel  = document.getElementById('navSectionLabel')

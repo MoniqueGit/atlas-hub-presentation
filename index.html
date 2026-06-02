@@ -52,8 +52,9 @@
       <a href="#problem"   class="nav-link" data-section="1">Problem</a>
       <a href="#robot"     class="nav-link" data-section="2">Concept</a>
       <a href="#technical" class="nav-link" data-section="3">Tech</a>
-      <a href="#demo"      class="nav-link" data-section="4">Demo</a>
-      <a href="#business"  class="nav-link" data-section="5">Impact</a>
+      <a href="#pipeline"  class="nav-link" data-section="4">Pipeline</a>
+      <a href="#demo"      class="nav-link" data-section="5">Demo</a>
+      <a href="#business"  class="nav-link" data-section="6">Impact</a>
     </div>
     <div class="nav-right">
       <span class="nav-section-label" id="navSectionLabel">Overview</span>
@@ -62,6 +63,7 @@
         <button class="nav-dot"        data-target="#problem"   aria-label="Problem"></button>
         <button class="nav-dot"        data-target="#robot"     aria-label="Concept"></button>
         <button class="nav-dot"        data-target="#technical" aria-label="Technical"></button>
+        <button class="nav-dot"        data-target="#pipeline"  aria-label="Pipeline"></button>
         <button class="nav-dot"        data-target="#demo"      aria-label="Demo"></button>
         <button class="nav-dot"        data-target="#business"  aria-label="Impact"></button>
         <button class="nav-dot"        data-target="#thanks"    aria-label="Thanks"></button>
@@ -289,144 +291,10 @@
   <div class="glow-blue" aria-hidden="true"></div>
   <div class="container">
 
-    <!-- Section header -->
-    <div class="tech-header">
-      <p class="eyebrow eyebrow-blue">Technical Architecture</p>
-      <h2 id="tech-heading" class="section-title" data-splitting>Inside the robot.</h2>
-    </div>
-
-    <!-- ── Architecture pipeline diagram ────────────── -->
-    <div class="arch-diagram" aria-label="Atlas Hub system architecture">
-
-      <div class="arch-wifi-badge" aria-hidden="true">
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg>
-        WiFi · Cloud
-      </div>
-
-      <!-- Row 1: Voice & AI pipeline -->
-      <p class="arch-row-label">Voice &amp; AI pipeline</p>
-      <div class="arch-row">
-
-        <div class="arch-node node-input">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2a3 3 0 0 1 3 3v7a3 3 0 0 1-6 0V5a3 3 0 0 1 3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
-          <span class="arch-label">MEMS MIC</span>
-          <span class="arch-sublabel">Voice input</span>
-        </div>
-
-        <div class="arch-arrow" data-arch-delay="0">
-          <svg viewBox="0 0 52 20" fill="none" aria-hidden="true"><path class="arch-path" d="M2 10H44M38 5l8 5-8 5" stroke="rgba(16,185,129,0.55)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-
-        <div class="arch-robot-center">
-          <div class="arch-robot-icon">
-            <div class="arch-robot-head"></div>
-            <div class="arch-robot-body"></div>
-            <div class="arch-robot-wheels">
-              <div class="arch-wheel"></div>
-              <div class="arch-wheel"></div>
-            </div>
-          </div>
-          <span class="arch-label">ESP32-S3</span>
-          <span class="arch-sublabel">240 MHz</span>
-          <div class="arch-robot-leds"></div>
-        </div>
-
-        <div class="arch-arrow" data-arch-delay="1">
-          <svg viewBox="0 0 52 20" fill="none" aria-hidden="true"><path class="arch-path" d="M2 10H44M38 5l8 5-8 5" stroke="rgba(59,130,246,0.55)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-
-        <div class="arch-node node-cloud">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
-          <span class="arch-label">WHISPER</span>
-          <span class="arch-sublabel">STT · Cloud</span>
-        </div>
-
-        <div class="arch-arrow" data-arch-delay="2">
-          <svg viewBox="0 0 52 20" fill="none" aria-hidden="true"><path class="arch-path" d="M2 10H44M38 5l8 5-8 5" stroke="rgba(59,130,246,0.55)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-
-        <div class="arch-node node-cloud arch-node-lea">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          <span class="arch-label arch-label-lea">LEA AI</span>
-          <span class="arch-sublabel">LLM · Response</span>
-        </div>
-
-        <div class="arch-arrow" data-arch-delay="3">
-          <svg viewBox="0 0 52 20" fill="none" aria-hidden="true"><path class="arch-path" d="M2 10H44M38 5l8 5-8 5" stroke="rgba(16,185,129,0.55)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-
-        <div class="arch-node node-output">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-          <span class="arch-label">SPEAKER</span>
-          <span class="arch-sublabel">TTS · &lt;2 sec</span>
-        </div>
-
-      </div>
-
-      <!-- Row 2: Navigation pipeline -->
-      <p class="arch-row-label">Navigation pipeline</p>
-      <div class="arch-row">
-
-        <div class="arch-node node-sensor">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          <span class="arch-label">PIR</span>
-          <span class="arch-sublabel">5m detect</span>
-        </div>
-
-        <div class="arch-arrow" data-arch-delay="4">
-          <svg viewBox="0 0 52 20" fill="none" aria-hidden="true"><path class="arch-path" d="M2 10H44M38 5l8 5-8 5" stroke="rgba(245,158,11,0.55)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-
-        <div class="arch-node node-sensor">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg>
-          <span class="arch-label">HC-SR04 ×3</span>
-          <span class="arch-sublabel">Obstacle avoid</span>
-        </div>
-
-        <div class="arch-arrow" data-arch-delay="5">
-          <svg viewBox="0 0 52 20" fill="none" aria-hidden="true"><path class="arch-path" d="M2 10H44M38 5l8 5-8 5" stroke="rgba(245,158,11,0.55)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-
-        <div class="arch-robot-center arch-robot-nav">
-          <div class="arch-robot-icon">
-            <div class="arch-robot-head"></div>
-            <div class="arch-robot-body"></div>
-            <div class="arch-robot-wheels">
-              <div class="arch-wheel"></div>
-              <div class="arch-wheel"></div>
-            </div>
-          </div>
-          <span class="arch-label">ESP32-S3</span>
-          <span class="arch-sublabel">Nav control</span>
-          <div class="arch-robot-leds"></div>
-        </div>
-
-        <div class="arch-arrow" data-arch-delay="5">
-          <svg viewBox="0 0 52 20" fill="none" aria-hidden="true"><path class="arch-path" d="M2 10H44M38 5l8 5-8 5" stroke="rgba(245,158,11,0.55)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-
-        <div class="arch-node node-motor">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-          <span class="arch-label">L298N</span>
-          <span class="arch-sublabel">Motor driver</span>
-        </div>
-
-        <div class="arch-arrow" data-arch-delay="5">
-          <svg viewBox="0 0 52 20" fill="none" aria-hidden="true"><path class="arch-path" d="M2 10H44M38 5l8 5-8 5" stroke="rgba(245,158,11,0.55)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-
-        <div class="arch-node node-motor">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          <span class="arch-label">DC Motors ×2</span>
-          <span class="arch-sublabel">Diff. drive</span>
-        </div>
-
-      </div>
-
-    </div>
-
     <!-- ── Components: image + list ──────────────────── -->
-    <div class="tech-layout">
+    <p class="eyebrow eyebrow-blue">Technical Architecture</p>
+    <h2 id="tech-heading" class="section-title" data-splitting>Inside the robot.</h2>
+    <div class="tech-layout" style="margin-top:28px">
 
       <div class="compo-img-wrap">
         <img
@@ -488,7 +356,142 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════
-     SECTION 5 — DEMO
+     SECTION 5 — PIPELINE
+     ═══════════════════════════════════════════════════ -->
+<section id="pipeline" class="section section-pipeline" aria-labelledby="pipeline-heading">
+  <div class="glow-blue" aria-hidden="true"></div>
+  <div class="container">
+
+    <p class="eyebrow eyebrow-blue">System Architecture</p>
+    <h2 id="pipeline-heading" class="section-title" data-splitting>How it works.</h2>
+
+    <div class="arch-diagram" aria-label="Atlas Hub system architecture">
+
+      <div class="arch-wifi-badge" aria-hidden="true">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg>
+        WiFi · Cloud
+      </div>
+
+      <!-- Row 1: Voice & AI -->
+      <p class="arch-row-label">Voice &amp; AI pipeline</p>
+      <div class="arch-row">
+
+        <div class="arch-node node-input">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2a3 3 0 0 1 3 3v7a3 3 0 0 1-6 0V5a3 3 0 0 1 3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+          <span class="arch-label">MEMS MIC</span>
+          <span class="arch-sublabel">Voice input</span>
+        </div>
+
+        <div class="arch-arrow" data-arch-delay="0">
+          <svg viewBox="0 0 52 20" fill="none" aria-hidden="true"><path class="arch-path" d="M2 10H44M38 5l8 5-8 5" stroke="rgba(16,185,129,0.55)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <div class="arch-robot-center">
+          <div class="arch-robot-icon">
+            <div class="arch-robot-head"></div>
+            <div class="arch-robot-body"></div>
+            <div class="arch-robot-wheels"><div class="arch-wheel"></div><div class="arch-wheel"></div></div>
+          </div>
+          <span class="arch-label">ESP32-S3</span>
+          <span class="arch-sublabel">240 MHz</span>
+          <div class="arch-robot-leds"></div>
+        </div>
+
+        <div class="arch-arrow" data-arch-delay="1">
+          <svg viewBox="0 0 52 20" fill="none" aria-hidden="true"><path class="arch-path" d="M2 10H44M38 5l8 5-8 5" stroke="rgba(59,130,246,0.55)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <div class="arch-node node-cloud">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+          <span class="arch-label">WHISPER</span>
+          <span class="arch-sublabel">STT · Cloud</span>
+        </div>
+
+        <div class="arch-arrow" data-arch-delay="2">
+          <svg viewBox="0 0 52 20" fill="none" aria-hidden="true"><path class="arch-path" d="M2 10H44M38 5l8 5-8 5" stroke="rgba(59,130,246,0.55)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <div class="arch-node node-cloud arch-node-lea">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span class="arch-label arch-label-lea">LEA AI</span>
+          <span class="arch-sublabel">LLM · Response</span>
+        </div>
+
+        <div class="arch-arrow" data-arch-delay="3">
+          <svg viewBox="0 0 52 20" fill="none" aria-hidden="true"><path class="arch-path" d="M2 10H44M38 5l8 5-8 5" stroke="rgba(16,185,129,0.55)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <div class="arch-node node-output">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+          <span class="arch-label">SPEAKER</span>
+          <span class="arch-sublabel">TTS · &lt;2 sec</span>
+        </div>
+
+      </div>
+
+      <!-- Row 2: Navigation -->
+      <p class="arch-row-label">Navigation pipeline</p>
+      <div class="arch-row">
+
+        <div class="arch-node node-sensor">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span class="arch-label">PIR</span>
+          <span class="arch-sublabel">5m detect</span>
+        </div>
+
+        <div class="arch-arrow" data-arch-delay="4">
+          <svg viewBox="0 0 52 20" fill="none" aria-hidden="true"><path class="arch-path" d="M2 10H44M38 5l8 5-8 5" stroke="rgba(245,158,11,0.55)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <div class="arch-node node-sensor">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg>
+          <span class="arch-label">HC-SR04 ×3</span>
+          <span class="arch-sublabel">Obstacle avoid</span>
+        </div>
+
+        <div class="arch-arrow" data-arch-delay="5">
+          <svg viewBox="0 0 52 20" fill="none" aria-hidden="true"><path class="arch-path" d="M2 10H44M38 5l8 5-8 5" stroke="rgba(245,158,11,0.55)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <div class="arch-robot-center arch-robot-nav">
+          <div class="arch-robot-icon">
+            <div class="arch-robot-head"></div>
+            <div class="arch-robot-body"></div>
+            <div class="arch-robot-wheels"><div class="arch-wheel"></div><div class="arch-wheel"></div></div>
+          </div>
+          <span class="arch-label">ESP32-S3</span>
+          <span class="arch-sublabel">Nav control</span>
+          <div class="arch-robot-leds"></div>
+        </div>
+
+        <div class="arch-arrow" data-arch-delay="5">
+          <svg viewBox="0 0 52 20" fill="none" aria-hidden="true"><path class="arch-path" d="M2 10H44M38 5l8 5-8 5" stroke="rgba(245,158,11,0.55)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <div class="arch-node node-motor">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+          <span class="arch-label">L298N</span>
+          <span class="arch-sublabel">Motor driver</span>
+        </div>
+
+        <div class="arch-arrow" data-arch-delay="5">
+          <svg viewBox="0 0 52 20" fill="none" aria-hidden="true"><path class="arch-path" d="M2 10H44M38 5l8 5-8 5" stroke="rgba(245,158,11,0.55)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <div class="arch-node node-motor">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <span class="arch-label">DC Motors ×2</span>
+          <span class="arch-sublabel">Diff. drive</span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 6 — DEMO
      ═══════════════════════════════════════════════════ -->
 <section id="demo" class="section section-demo" aria-labelledby="demo-heading">
   <div class="glow-emerald" aria-hidden="true"></div>

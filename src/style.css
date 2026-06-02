@@ -686,7 +686,9 @@ body.present-mode .thanks-inner {
 /* ═══════════════════════════════════════════════════════
    SECTION 4 — TECHNICAL + CUTAWAY
    ═══════════════════════════════════════════════════════ */
-.section-technical { align-items: flex-start; padding-top: 120px; }
+.section-technical { align-items: flex-start; padding-top: 100px; }
+.section-pipeline  { align-items: flex-start; padding-top: 100px; }
+body.present-mode .section-pipeline { padding-top: 36px; }
 .tech-split { display: grid; grid-template-columns: 1fr 1fr 260px; gap: 40px; width: 100%; }
 
 .tech-components { display: flex; flex-direction: column; gap: 10px; }
