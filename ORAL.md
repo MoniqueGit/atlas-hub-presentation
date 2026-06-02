@@ -53,7 +53,7 @@
 
 > "My name is Luis Causse.
 > And I'm here with my associate, Youri Figuié.
-> We are the founders of **Atlas Agency** —
+> We are the founders of **Atlas Stay** —
 > a technology start-up based in Montpellier, France."
 
 **[Pause. Change tone — tell a story now.]**

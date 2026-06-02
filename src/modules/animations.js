@@ -13,16 +13,19 @@ export function initAnimations() {
   heroTl
     .fromTo('.eyebrow',      { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: .6, ease: 'power2.out' }, 0.1)
     .fromTo('.badge-pill',   { opacity: 0, scale: .9 }, { opacity: 1, scale: 1, duration: .5, ease: 'back.out(1.4)' }, 0.25)
+    .fromTo('.hero-system-bar',
+      { opacity: 0, y: -8 },
+      { opacity: 1, y: 0, duration: .5, ease: 'power2.out' }, 0.42)
     .fromTo('.section-hero .title-line:first-child .char',
       { opacity: 0, y: 30, rotateX: -25 },
-      { opacity: 1, y: 0, rotateX: 0, duration: .65, ease: 'power3.out', stagger: .03 }, 0.35)
+      { opacity: 1, y: 0, rotateX: 0, duration: .65, ease: 'power3.out', stagger: .03 }, 0.55)
     .fromTo('.section-hero .title-line.title-italic .char',
       { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: .55, ease: 'power2.out', stagger: .025 }, 0.6)
-    .fromTo('.hero-description', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: .6, ease: 'power2.out' }, 0.85)
-    .fromTo('.hero-cta-group',   { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: .5, ease: 'power2.out' }, 1.0)
-    .fromTo('.hero-scroll-indicator', { opacity: 0 }, { opacity: 1, duration: .6 }, 1.2)
-    .fromTo('.hero-meta',     { opacity: 0 }, { opacity: 1, duration: .5 }, 1.3)
+      { opacity: 1, y: 0, duration: .55, ease: 'power2.out', stagger: .025 }, 0.8)
+    .fromTo('.hero-description', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: .6, ease: 'power2.out' }, 1.0)
+    .fromTo('.hero-cta-group',   { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: .5, ease: 'power2.out' }, 1.15)
+    .fromTo('.hero-scroll-indicator', { opacity: 0 }, { opacity: 1, duration: .6 }, 1.35)
+    .fromTo('.hero-meta',     { opacity: 0 }, { opacity: 1, duration: .5 }, 1.45)
 
   /* ── Bar charts — animate on scroll ──────────── */
   ScrollTrigger.create({

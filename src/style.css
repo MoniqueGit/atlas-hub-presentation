@@ -263,7 +263,7 @@ body {
   background: linear-gradient(135deg, #fff 0%, #c8c8c8 50%, #fff 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-.title-italic { font-style: italic; background: none; -webkit-text-fill-color: rgba(255,255,255,.22); }
+.title-italic { font-style: italic; background: none; -webkit-text-fill-color: rgba(255,255,255,.90); }
 .hero-description { font-family: var(--font-body); font-size: 24px; line-height: 1.6; color: rgba(255,255,255,0.55); max-width: 640px; margin-bottom: 36px; }
 .hero-cta-group { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: center; margin-bottom: 52px; }
 .hero-scroll-indicator { display: flex; flex-direction: column; align-items: center; margin-bottom: 32px; }
@@ -1429,4 +1429,594 @@ body.present-mode .section-header-left {
   border-radius: 8px;
   padding: 8px 12px;
   margin-top: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   ATLAS HUB — VISUAL OVERHAUL v2 · Engineer Edition
+   Neural Network · Dynamic Backgrounds · HUD Effects
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Global background canvas ─────────────────────────── */
+#bgCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Dot grid overlay ─────────────────────────────────── */
+.grid-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: radial-gradient(circle, rgba(16,185,129,0.065) 1px, transparent 1px);
+  background-size: 46px 46px;
+  background-position: center;
+}
+
+/* Sections sit above the fixed background layers via DOM order */
+.section { isolation: isolate; }
+
+/* ── Amplified section glow effects ──────────────────── */
+.hero-glow {
+  width: 900px !important;
+  height: 700px !important;
+  background: radial-gradient(ellipse, rgba(16,185,129,.10) 0%, rgba(16,185,129,.04) 35%, transparent 68%) !important;
+}
+.glow-amber {
+  width: 800px !important;
+  height: 650px !important;
+  background: radial-gradient(ellipse, rgba(245,158,11,.13) 0%, rgba(245,158,11,.04) 40%, transparent 70%) !important;
+}
+.glow-blue {
+  width: 800px !important;
+  height: 650px !important;
+  background: radial-gradient(ellipse, rgba(59,130,246,.11) 0%, rgba(59,130,246,.03) 40%, transparent 70%) !important;
+}
+.glow-emerald {
+  width: 750px !important;
+  height: 620px !important;
+  background: radial-gradient(ellipse, rgba(16,185,129,.10) 0%, rgba(16,185,129,.03) 40%, transparent 70%) !important;
+}
+.glow-amber-lg {
+  width: 1100px !important;
+  height: 750px !important;
+  background: radial-gradient(ellipse, rgba(245,158,11,.09) 0%, rgba(245,158,11,.03) 40%, transparent 70%) !important;
+}
+
+/* ── Section scan line at top ─────────────────────────── */
+.section-problem::before,
+.section-robot::before,
+.section-technical::before,
+.section-demo::before,
+.section-business::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(16,185,129,.22) 25%, rgba(59,130,246,.22) 75%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Hero system status bar ───────────────────────────── */
+.hero-system-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(0,0,0,0.50);
+  border: 1px solid rgba(16,185,129,0.16);
+  border-radius: 8px;
+  padding: 7px 18px;
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  margin-bottom: 28px;
+  backdrop-filter: blur(12px);
+  opacity: 0;
+}
+.sbar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.42);
+  white-space: nowrap;
+}
+.sbar-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.sbar-dot-green {
+  background: var(--emerald);
+  box-shadow: 0 0 6px rgba(16,185,129,0.9);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+.sbar-dot-blue {
+  background: var(--blue-ai);
+  box-shadow: 0 0 6px rgba(59,130,246,0.8);
+  animation: pulse-dot-blue 2.5s ease-in-out infinite;
+}
+@keyframes pulse-dot-blue {
+  0%,100% { transform: scale(1); opacity: .8; }
+  50%      { transform: scale(1.6); opacity: 1; }
+}
+.sbar-divider {
+  color: rgba(255,255,255,0.10);
+  font-size: 12px;
+}
+
+/* ── Floating system status widget ───────────────────── */
+.sys-status-badge {
+  position: fixed;
+  top: 80px;
+  right: 24px;
+  z-index: 55;
+  background: rgba(4,4,6,0.82);
+  border: 1px solid rgba(16,185,129,0.16);
+  border-radius: 10px;
+  padding: 10px 14px;
+  backdrop-filter: blur(18px);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 148px;
+}
+.ssb-header {
+  font-family: 'Courier New', monospace;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: rgba(16,185,129,0.5);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.ssb-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  letter-spacing: 0.10em;
+  color: rgba(255,255,255,0.32);
+}
+.ssb-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--emerald);
+  box-shadow: 0 0 5px rgba(16,185,129,0.9);
+  animation: pulse-dot 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+.ssb-dot-blue {
+  background: var(--blue-ai);
+  box-shadow: 0 0 5px rgba(59,130,246,0.8);
+  animation: pulse-dot-blue 2.5s ease-in-out infinite;
+}
+
+/* ── Hide system badge in present mode ──────────────── */
+body.present-mode .sys-status-badge { display: none; }
+
+/* ── Neon text shadow on statistics ─────────────────── */
+.stat-big.emerald {
+  text-shadow: 0 0 28px rgba(16,185,129,0.55), 0 0 56px rgba(16,185,129,0.18);
+}
+.stat-big.amber {
+  text-shadow: 0 0 28px rgba(245,158,11,0.55), 0 0 56px rgba(245,158,11,0.18);
+}
+.stat-big.white {
+  text-shadow: 0 0 28px rgba(255,255,255,0.28), 0 0 56px rgba(255,255,255,0.08);
+}
+.conseq-stat {
+  text-shadow: 0 0 22px rgba(245,158,11,0.48), 0 0 44px rgba(245,158,11,0.15) !important;
+}
+.conseq-stat-purple {
+  text-shadow: 0 0 22px rgba(167,139,250,0.48), 0 0 44px rgba(167,139,250,0.15) !important;
+}
+.rtime-num-good {
+  text-shadow: 0 0 30px rgba(16,185,129,0.72), 0 0 60px rgba(16,185,129,0.25) !important;
+}
+.rtime-num-bad  { text-shadow: 0 0 22px rgba(239,68,68,0.62) !important; }
+.rtime-num-mid  { text-shadow: 0 0 22px rgba(245,158,11,0.52) !important; }
+
+/* ── Neon on eyebrow labels ──────────────────────────── */
+.eyebrow-emerald { text-shadow: 0 0 18px rgba(52,211,153,0.42); }
+.eyebrow-blue    { text-shadow: 0 0 18px rgba(96,165,250,0.42); }
+.eyebrow-amber   { text-shadow: 0 0 18px rgba(251,191,36,0.42); }
+
+/* ── Enhanced section title gradient (emerald shift) ─── */
+.section-title {
+  background: linear-gradient(135deg, #ffffff 0%, #d8d8d8 30%, #a8f0cc 62%, #e0e0e0 82%, #ffffff 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* ── Progress bar: gradient across two accent colors ──── */
+.progress-bar {
+  background: linear-gradient(90deg, var(--emerald), var(--blue-ai)) !important;
+  box-shadow: 0 0 10px rgba(16,185,129,.5) !important;
+}
+
+/* ── Active nav dot ──────────────────────────────────── */
+.nav-dot.active {
+  box-shadow: 0 0 12px rgba(16,185,129,.75), 0 0 24px rgba(16,185,129,.3) !important;
+}
+
+/* ── Emerald bar-fill trailing glow ──────────────────── */
+.bar-fill.bar-emerald {
+  position: relative;
+}
+.bar-fill.bar-emerald::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 10%; bottom: 10%;
+  width: 3px;
+  background: rgba(52,211,153,0.95);
+  box-shadow: 0 0 8px rgba(16,185,129,0.9), 0 0 16px rgba(16,185,129,0.45);
+  border-radius: 2px;
+}
+
+/* ── Card shimmer animation ──────────────────────────── */
+@keyframes card-shimmer {
+  0%   { background-position: -300% 0; }
+  100% { background-position: 300% 0; }
+}
+
+/* ── Pricing card shimmer ────────────────────────────── */
+.pricing-card {
+  overflow: hidden;
+}
+.pricing-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    108deg,
+    transparent 25%,
+    rgba(52,211,153,0.07) 50%,
+    transparent 75%
+  );
+  background-size: 400% 100%;
+  pointer-events: none;
+  animation: card-shimmer 6s ease-in-out infinite;
+  border-radius: inherit;
+}
+
+/* ── Biz stat cards: hover + shimmer ────────────────── */
+.biz-stat-card {
+  position: relative;
+  overflow: hidden;
+  transition: border-color .3s, box-shadow .3s;
+}
+.biz-stat-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    108deg,
+    transparent 25%,
+    rgba(16,185,129,0.04) 50%,
+    transparent 75%
+  );
+  background-size: 400% 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .3s;
+  border-radius: inherit;
+  animation: card-shimmer 7s ease-in-out infinite;
+}
+.biz-stat-card:hover {
+  border-color: rgba(16,185,129,0.18) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35), 0 0 24px rgba(16,185,129,0.06);
+}
+.biz-stat-card:hover::after { opacity: 1; }
+
+/* ── Consequence card hover ──────────────────────────── */
+.consequence-card {
+  transition: border-color .3s, box-shadow .3s, transform .3s !important;
+}
+.consequence-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35) !important;
+}
+
+/* ── ROI hero row enhanced glow ──────────────────────── */
+.biz-roi-item-hero {
+  box-shadow: 0 0 28px rgba(16,185,129,0.08), inset 0 0 20px rgba(16,185,129,0.03) !important;
+}
+
+/* ── Hero title first-line emerald shimmer ──────────── */
+.section-hero .title-line:first-child {
+  background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 40%, #7ee8b4 65%, #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Primary button sweep effect ────────────────────── */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  transform: translateX(-100%);
+  transition: transform .5s ease;
+}
+.btn-primary:hover::before { transform: translateX(100%); }
+
+/* ── Chat window enhanced ambient ────────────────────── */
+.chat-window {
+  box-shadow: 0 0 0 1px rgba(16,185,129,0.07),
+              0 32px 80px rgba(0,0,0,.65),
+              0 0 50px rgba(16,185,129,0.05) !important;
+}
+
+/* ── Robot video ambient glow ────────────────────────── */
+.robot-video {
+  box-shadow: 0 0 60px rgba(16,185,129,0.10),
+              0 24px 48px rgba(0,0,0,0.55) !important;
+}
+
+/* ── Technical image ambient glow ────────────────────── */
+.compo-img {
+  box-shadow: 0 24px 64px rgba(0,0,0,0.60),
+              0 0 40px rgba(59,130,246,0.05) !important;
+}
+
+/* ── Thanks video frame glow ─────────────────────────── */
+.thanks-video-frame {
+  box-shadow:
+    0 0 0 1px rgba(16,185,129,0.12),
+    0 24px 80px rgba(0,0,0,0.72),
+    0 0 80px rgba(16,185,129,0.12) !important;
+}
+
+/* ── Hero system bar: animate in ─────────────────────── */
+.hero-system-bar.visible {
+  opacity: 1;
+  animation: sbar-in .6s ease both;
+}
+@keyframes sbar-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Robot section subtle floor glow ─────────────────── */
+.section-robot::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: 700px; height: 300px;
+  background: radial-gradient(ellipse, rgba(16,185,129,0.045) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Closing tag chips: glow on hover ───────────────── */
+.closing-tag {
+  transition: border-color .25s, box-shadow .25s, color .25s;
+}
+.closing-tag:hover {
+  border-color: rgba(52,211,153,0.45);
+  box-shadow: 0 0 12px rgba(16,185,129,0.2);
+  color: rgba(52,211,153,0.95);
+}
+
+/* ── Voice command mic icon glow ─────────────────────── */
+.voice-cmd:hover svg {
+  filter: drop-shadow(0 0 4px rgba(16,185,129,0.7));
+}
+
+/* ── LEA avatar pulse ring ───────────────────────────── */
+.lea-avatar {
+  position: relative;
+  box-shadow: 0 0 0 0 rgba(16,185,129,0.5);
+  animation: lea-pulse-ring 2.5s ease-out infinite;
+}
+@keyframes lea-pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(16,185,129,0.4); }
+  70%  { box-shadow: 0 0 0 8px rgba(16,185,129,0); }
+  100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+}
+
+/* ── Online dot enhanced ─────────────────────────────── */
+.online-dot {
+  box-shadow: 0 0 6px rgba(16,185,129,0.9);
+}
+
+/* ── Reduce motion: disable all new animations ───────── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-system-bar,
+  .ssb-dot, .sbar-dot,
+  .pricing-card::after,
+  .biz-stat-card::after,
+  .btn-primary::before,
+  .lea-avatar,
+  .bar-fill.bar-emerald::after { animation: none !important; transition: none !important; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   HERO — SPLIT LAYOUT (unused, kept for reference)
+   ═══════════════════════════════════════════════════════ */
+/* (styles below are inert — hero uses .hero-content) */
+.hero-split, .hero-left, .hero-right,
+.hero-robot-glow, .hero-robot-floor-glow,
+.hero-robot-badge, .hero-robot-video-main,
+.badge-dot-sm { display: none; }
+
+/* Grid: 54% text | 46% robot */
+.hero-split {
+  display: grid;
+  grid-template-columns: 54fr 46fr;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 64px;
+  position: relative;
+  z-index: var(--z-base);
+}
+
+/* ── Left column ─────────────────────────────────────── */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 52px 36px 64px 64px;
+  gap: 0;
+}
+
+.hero-left .eyebrow        { text-align: left; align-self: flex-start; }
+.hero-left .badge-pill     { align-self: flex-start; }
+.hero-left .hero-system-bar{ align-self: flex-start; }
+.hero-left .hero-meta      { text-align: left; }
+
+.hero-left .hero-title {
+  align-items: flex-start !important;
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+/* Scale title for the narrower left column */
+.hero-left .title-line {
+  font-size: clamp(44px, 5.6vw, 80px) !important;
+}
+
+.hero-left .hero-cta-group {
+  justify-content: flex-start !important;
+  margin-bottom: 40px;
+}
+
+.hero-left .hero-scroll-indicator { margin-bottom: 24px; }
+
+/* ── Right column — robot cinematic ─────────────────── */
+.hero-right {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Emerald ambient behind robot */
+.hero-robot-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 60%, rgba(16,185,129,.22) 0%, rgba(16,185,129,.07) 38%, transparent 65%),
+    radial-gradient(ellipse at 80% 20%, rgba(16,185,129,.10) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Floor reflection glow at the bottom */
+.hero-robot-floor-glow {
+  position: absolute;
+  bottom: 0; left: 10%; right: 10%;
+  height: 200px;
+  background: radial-gradient(ellipse at 50% 100%, rgba(16,185,129,.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Live demo badge */
+.hero-robot-badge {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,0,0,0.50);
+  border: 1px solid rgba(16,185,129,0.22);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(52,211,153,.75);
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  white-space: nowrap;
+}
+
+.badge-dot-sm {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--emerald-hover);
+  animation: pulse-dot 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+/* Robot video — fills the right panel, bleeds at bottom */
+.hero-robot-video-main {
+  width: 100%;
+  height: 110%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin-bottom: -10%;
+}
+
+/* ── Present mode overrides ──────────────────────────── */
+body.present-mode .hero-split {
+  padding-top: 0;
+  height: 100vh;
+  min-height: 100vh;
+}
+body.present-mode .hero-left {
+  padding: 28px 28px 28px 52px;
+}
+
+/* ── Mobile: stack robot below, text above ───────────── */
+@media (max-width: 1024px) {
+  .section-hero {
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important;
+  }
+  .hero-split {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 64px;
+    min-height: unset;
+  }
+  .hero-right {
+    height: 50vw;
+    min-height: 280px;
+    width: 100%;
+  }
+  .hero-robot-video-main {
+    height: 100%;
+    margin-bottom: 0;
+  }
+  .hero-left {
+    padding: 36px 28px 48px;
+    text-align: center;
+    align-items: center;
+  }
+  .hero-left .eyebrow,
+  .hero-left .badge-pill,
+  .hero-left .hero-system-bar,
+  .hero-left .hero-meta { align-self: center; text-align: center; }
+  .hero-left .hero-title  { align-items: center !important; }
+  .hero-left .hero-cta-group { justify-content: center !important; }
+  .hero-left .title-line { font-size: clamp(42px, 9vw, 72px) !important; }
 }

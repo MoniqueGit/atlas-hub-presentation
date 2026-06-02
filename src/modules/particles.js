@@ -8,8 +8,9 @@ export function initParticles(canvasId) {
   let W = 0
   let H = 0
 
-  const PARTICLE_COUNT = 80
+  const PARTICLE_COUNT = 100
   const EMERALD = [16, 185, 129]
+  const BLUE = [96, 165, 250]
 
   class Particle {
     constructor() { this.reset() }
@@ -17,12 +18,13 @@ export function initParticles(canvasId) {
     reset() {
       this.x = Math.random() * W
       this.y = Math.random() * H
-      this.vx = (Math.random() - 0.5) * 0.25
-      this.vy = (Math.random() - 0.5) * 0.25
-      this.radius = Math.random() * 1.5 + 0.5
-      this.alpha = Math.random() * 0.04 + 0.01
+      this.vx = (Math.random() - 0.5) * 0.30
+      this.vy = (Math.random() - 0.5) * 0.30
+      this.radius = Math.random() * 1.8 + 0.6
+      this.alpha = Math.random() * 0.055 + 0.015
       this.life = 0
-      this.maxLife = Math.random() * 300 + 150
+      this.maxLife = Math.random() * 280 + 140
+      this.isBlue = Math.random() > 0.78
     }
 
     update() {
@@ -38,17 +40,24 @@ export function initParticles(canvasId) {
     }
 
     draw() {
-      // Fade in/out
       const progress = this.life / this.maxLife
       const fade = progress < 0.1
         ? progress * 10
         : progress > 0.9
           ? (1 - progress) * 10
           : 1
+      const col = this.isBlue ? BLUE : EMERALD
 
+      /* Glow halo */
+      ctx.beginPath()
+      ctx.arc(this.x, this.y, this.radius * 4, 0, Math.PI * 2)
+      ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${this.alpha * fade * 0.3})`
+      ctx.fill()
+
+      /* Core */
       ctx.beginPath()
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2)
-      ctx.fillStyle = `rgba(${EMERALD[0]},${EMERALD[1]},${EMERALD[2]},${this.alpha * fade})`
+      ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${this.alpha * fade})`
       ctx.fill()
     }
   }
@@ -80,13 +89,14 @@ export function initParticles(canvasId) {
     })
 
     // Draw connections between nearby particles
+    const CONN_DIST = 130
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x
         const dy = particles[i].y - particles[j].y
-        const dist = Math.sqrt(dx * dx + dy * dy)
-        if (dist < 100) {
-          const alpha = (1 - dist / 100) * 0.015
+        const d2 = dx * dx + dy * dy
+        if (d2 < CONN_DIST * CONN_DIST) {
+          const alpha = (1 - Math.sqrt(d2) / CONN_DIST) * 0.022
           ctx.beginPath()
           ctx.moveTo(particles[i].x, particles[i].y)
           ctx.lineTo(particles[j].x, particles[j].y)

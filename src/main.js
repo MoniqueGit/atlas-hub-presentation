@@ -3,6 +3,7 @@ import 'splitting/dist/splitting.css'
 import 'splitting/dist/splitting-cells.css'
 
 import Lenis from 'lenis'
+import { initBackground }   from './modules/background.js'
 import { initParticles }    from './modules/particles.js'
 import { initAnimations }   from './modules/animations.js'
 import { initDemo }         from './modules/demo.js'
@@ -21,6 +22,7 @@ requestAnimationFrame(raf)
 
 /* ── Init on DOMContentLoaded ─────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
+  initBackground()
   initNavigation()
   initPresentation()
   initParticles('particlesCanvas')
