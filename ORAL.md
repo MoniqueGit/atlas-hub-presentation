@@ -3,8 +3,8 @@
 ### Youri Figuié & Luis Causse · 10 min + 5 min Q&A · 04/06/2026
 
 > **Context:** You are inventors presenting Atlas Hub to the **World Company** jury.
-> The jury looks at: slide quality, grammar, vocabulary, delivery, and Q&A.
-> **Do not read — use notes as a guide only. Look at the jury. Speak clearly.**
+> The jury evaluates: slide quality, grammar, vocabulary, delivery, and Q&A.
+> **Do not read — use notes as a reference only. Look at the jury. Speak naturally.**
 
 ---
 
@@ -22,143 +22,139 @@
 | 8:15 – 8:30    | Both    | 8 — Thank You       | Conclusion                   |
 | 8:30 – 13:30   | Both    | —                   | Questions & answers          |
 
-> **Tip:** Speak slowly. Pause after big numbers — let the jury write them down.
-> If you finish early, smile and wait. Do not rush.
+> **Tip:** Speak slowly and clearly. Pause after big numbers — let the jury write them down.
+> If you finish early, smile and wait. Do not rush to fill the silence.
 
 ---
 
 ## VOCABULARY QUICK REFERENCE
 
-| Technical           | Business             | Transitions               |
-|---------------------|----------------------|---------------------------|
-| embedded system     | return on investment | *"As you can see..."*     |
-| microcontroller     | subscription model   | *"This is why..."*        |
-| speech-to-text      | property manager     | *"In other words..."*     |
-| ultrasonic sensor   | short-term rental    | *"Let me explain..."*     |
-| differential drive  | market share         | *"Look at this..."*       |
-| cloud processing    | recurring revenue    | *"The result is..."*      |
-| obstacle avoidance  | profit margin        | *"To put it simply..."*   |
+| Technical           | Business             | Transitions                    |
+|---------------------|----------------------|--------------------------------|
+| embedded system     | return on investment | *"As you can see on the slide..."* |
+| microcontroller     | subscription model   | *"This is why..."*             |
+| speech-to-text      | property manager     | *"In other words..."*          |
+| ultrasonic sensor   | short-term rental    | *"What this means is..."*      |
+| differential drive  | market share         | *"Let me show you..."*         |
+| cloud processing    | recurring revenue    | *"The result is clear..."*     |
+| obstacle avoidance  | profit margin        | *"To put it simply..."*        |
 
 ---
 
 # SLIDE 1 — INTRODUCTION
 ## Luis · ~45 seconds
 
-**[Stand up. Look at the jury. Smile.]**
+**[Stand up straight. Look at the jury. Smile confidently.]**
 
-> "Good morning."
+> "Good morning, everyone."
 
-**[Short pause.]**
+**[Short pause. Scan the room.]**
 
-> "My name is Luis Causse.
-> I'm here with Youri Figuié.
-> We are second-year GEII students at IUT Montpellier-Sète.
-> Today, we present **Atlas Hub** — our invention."
+> "My name is Luis Causse, and I'm here with my partner Youri Figuié.
+> We are second-year GEII students, specialising in embedded systems at IUT Montpellier-Sète.
+> Today, we are proud to present our invention: **Atlas Hub**."
 
-**[Change tone. Tell a story.]**
+**[Change tone — slower, more dramatic. Tell the story.]**
 
-> "But first — imagine this.
-> You arrive at your Airbnb. It's 3 in the morning.
-> You don't know the WiFi password.
-> The heating doesn't work.
-> And the host is asleep."
+> "But before we show you the technology, I'd like you to imagine a situation.
+> You arrive at your Airbnb apartment. It's 3 in the morning.
+> You don't know the WiFi password, the heating isn't working,
+> and the host — is completely asleep."
 
-**[Pause. Look at the jury.]**
+**[Pause. Make eye contact with one jury member.]**
 
-> "What do you do?
-> You wait. You send a message. You hope.
-> **That is the problem we are solving.**"
+> "What do you do? You wait. You send a message. You hope for the best.
+> And that, ladies and gentlemen, is exactly the problem we are solving."
 
 ---
 
 # SLIDE 2 — THE PROBLEM
 ## Luis · ~1 min 30 sec
 
-> "Short-term rentals are growing fast in Europe.
-> There are more than **15 million properties** on Airbnb today."
+> "The short-term rental market is one of the fastest-growing markets in Europe,
+> with more than **15 million properties** listed online today."
 
 **[Point to the bar chart.]**
 
-> "But there is a big problem — response time at night.
->
-> When a guest needs help, the average host takes **47 minutes** to answer.
-> A QR code app? Maybe 18 minutes. Still too slow.
-> With Atlas Hub — **under 2 seconds.**"
+> "But there is a very serious problem with guest experience at night.
+> When a guest needs help, the average host takes **47 minutes** to respond.
+> With a QR code app, it might be 18 minutes — but that is still far too long.
+> With Atlas Hub, the answer comes in **under 2 seconds.**"
 
-**[Pause. Let the numbers land.]**
+**[Pause. Let the contrast land.]**
 
-**[Point to the consequence cards.]**
+**[Point to the consequence cards below.]**
 
-> "And the cost is real.
-> 38% of bad reviews come from check-in problems.
-> 67% of guest complaints happen at night.
->
-> One bad review on Airbnb can cost a host **500 euros in lost bookings.**
-> That's a serious problem."
+> "And the consequences are real. As you can see on the slide,
+> 38% of bad reviews are directly caused by check-in problems,
+> and 67% of guest complaints happen between 10PM and 8AM.
+> One single bad review on Airbnb can cost a host around **500 euros in lost bookings** —
+> and that's a problem that our product solves completely."
 
-**[Look at Youri. Hand over.]**
+**[Look at Youri. Hand over naturally.]**
 
-> "Youri will now show you our solution."
+> "Youri will now show you how Atlas Hub works."
 
 ---
 
 # SLIDE 3 — MEET ATLAS HUB
 ## Youri · ~1 min 30 sec
 
-**[Point to the robot video on screen.]**
+**[Step forward. Point to the robot rotating on screen.]**
 
-> "Thank you, Luis.
-> So — this is **Atlas Hub.**"
+> "Thank you, Luis. So — this is **Atlas Hub.**"
 
-**[Pause. Let the jury look at it.]**
+**[Pause. Let the jury look at it for a moment.]**
 
-> "It's a small robot that lives inside the apartment.
-> It's always on — 24 hours a day, 7 days a week.
+> "It is a compact wheeled robot that lives inside the apartment,
+> and it is available 24 hours a day, 7 days a week — no exceptions.
+> Let me explain how it works in four simple steps."
+
+**[Count on your fingers — more natural than a pointer.]**
+
+> "**Step one** — a PIR motion sensor detects when a guest enters the room,
+> with a range of up to 5 meters.
 >
-> Here's how it works. Four steps."
-
-**[Count on your fingers.]**
-
-> "**Step one** — A motion sensor detects the guest. Range: 5 meters.
+> **Step two** — the robot drives toward the guest automatically,
+> and it avoids any obstacle in its way — chairs, bags, suitcases.
 >
-> **Step two** — The robot moves toward them automatically.
-> It avoids chairs, bags, everything in its way.
+> **Step three** — it listens. A high-quality MEMS microphone
+> captures the guest's voice clearly, even in a noisy environment.
 >
-> **Step three** — It listens. A microphone captures the voice clearly.
->
-> **Step four** — It answers.
-> Our AI — called **LEA** — speaks back in the guest's language
-> in under 2 seconds."
+> **Step four** — it answers. Our AI system, called **LEA**,
+> generates a personalised response in the guest's own language
+> and plays it through the speaker — all in under 2 seconds."
 
-**[Smile.]**
+**[Smile. Let it breathe.]**
 
-> "No app. No phone. No waiting.
-> The guest just talks to the robot.
-> LEA knows over 50 languages — and it never gets tired."
+> "There is no app to download, no phone to unlock, and no waiting.
+> The guest simply talks to the robot, and LEA speaks back.
+> It supports over 50 languages and knows every detail about the apartment —
+> and unlike a human host, it never gets tired."
 
 ---
 
 # SLIDE 4 — COMPONENTS
 ## Youri · ~1 min 15 sec
 
-**[Point to the photo on screen.]**
+**[Point to the components photo on the left side of the screen.]**
 
-> "Let me show you what's inside."
+> "Let me show you what is actually inside Atlas Hub."
 
-> "The brain is an **ESP32-S3** microcontroller.
-> It runs at 240 MHz, has two processor cores, and built-in WiFi.
-> It costs about **5 euros** — which keeps our hardware price low."
+> "The brain of the robot is an **ESP32-S3** microcontroller,
+> running at 240 MHz with two processor cores and built-in WiFi.
+> It costs approximately **5 euros**, which is why we can keep the hardware price reasonable."
 
-**[Point to the list.]**
+**[Point to each item on the component list.]**
 
-> "The MEMS microphone captures the guest's voice
-> and sends it to our cloud server via WiFi.
->
-> Three ultrasonic sensors detect obstacles.
-> Two motors move the robot forward.
-> A servo motor turns the head toward the guest — it looks more natural.
->
-> Everything runs on a **2,500 mAh battery** — about 4 hours of use."
+> "For voice capture, we use a MEMS microphone that filters out background noise
+> and sends the audio to our cloud server over WiFi.
+> For navigation, three HC-SR04 ultrasonic sensors handle obstacle detection
+> with a range of up to 4 meters, and two DC motors drive the robot forward.
+> A small SG90 servo motor rotates the head toward the guest before the robot starts moving —
+> which makes the whole interaction feel much more natural.
+> Finally, everything is powered by a 2,500 mAh LiPo battery,
+> giving about **4 hours of active use** and 12 hours in standby."
 
 ---
 
@@ -167,104 +163,101 @@
 
 **[Point to the diagram on screen.]**
 
-> "Now let me show you the full system — step by step."
+> "Now, let me walk you through the full system pipeline — from the guest's voice to the answer."
 
-**[Point to the top row.]**
+**[Point to the top row — Voice pipeline.]**
 
-> "When the guest speaks:
-> The microphone captures the voice.
-> The ESP32 sends it to the cloud over WiFi.
-> **Whisper** converts speech to text.
-> **LEA** generates the answer.
-> The speaker plays it back. All in **under 2 seconds.**"
+> "When the guest speaks, the MEMS microphone captures the audio
+> and the ESP32 sends it to our cloud server over WiFi.
+> In the cloud, **Whisper** — an AI tool from OpenAI — converts the speech into text.
+> Then **LEA** generates the right answer, and the text is converted back to audio
+> by our text-to-speech engine, which plays through the speaker.
+> The entire process takes **under 2 seconds.**"
 
-**[Point to the bottom row.]**
+**[Point to the bottom row — Navigation pipeline.]**
 
-> "For movement:
-> The PIR sensor detects the guest.
-> The ultrasonic sensors check for obstacles.
-> The ESP32 controls the motors through the L298N driver.
-> The robot moves — safely and automatically."
+> "At the same time, the navigation system is running in parallel.
+> The PIR sensor detects the guest, the ultrasonic sensors check for obstacles,
+> and the ESP32 sends movement commands to the L298N motor driver,
+> which controls the two DC motors. The robot moves toward the guest safely and automatically."
 
 **[Look at Luis. Hand over.]**
 
-> "Luis will now show you the demo."
+> "Luis will now show you what this looks like in practice."
 
 ---
 
 # SLIDE 6 — LIVE DEMO
 ## Luis · ~45 sec
 
-**[Point to the demo interface on screen.]**
+**[Step forward. Point to the demo interface on screen.]**
 
-> "Now — let's see Atlas Hub in action."
+> "Now let me show you Atlas Hub in action."
 
-> "On screen, you can see our demo interface.
-> This is exactly what happens when a guest talks to the robot."
+> "On the screen, you can see our demo interface,
+> which simulates exactly what happens when a guest speaks to the robot."
 
-**[Point to the voice commands on the left.]**
+**[Point to the voice commands on the left side.]**
 
-> "A guest asks: 'What is the WiFi password?'
-> LEA processes the question in the cloud —
-> and answers in under 2 seconds, in the guest's own language."
+> "For example, a guest says: *'What is the WiFi password?'*
+> LEA processes the question in the cloud and responds in under 2 seconds,
+> in the guest's own language — with the exact information they need."
 
-> "The host sets everything up in the **Atlas Stay dashboard.**
-> One platform. One subscription.
-> The host never needs to be there at night."
+> "The host sets everything up in advance through the **Atlas Stay dashboard** —
+> one simple platform, one subscription, and no need to be physically present at night.
+> The robot handles everything on its own."
 
 ---
 
 # SLIDE 7 — BUSINESS IMPACT
 ## Luis · ~1 min 30 sec
 
-**[Point to the 4 stat cards.]**
+**[Step forward confidently. Point to the 4 stat cards.]**
 
-> "Why should you invest in Atlas Hub?"
+> "So — why should the World Company invest in Atlas Hub?"
 
-> "There are **15 million** short-term rentals in Europe.
-> With Atlas Hub, hosts get:
-> 82% less work at night.
-> Plus 0.4 stars on their Airbnb rating.
->
-> On Airbnb, that half-star means **28% more bookings.**"
+> "There are currently **15 million** short-term rentals in Europe,
+> and property managers often handle 5, 10, even 20 apartments at the same time.
+> With Atlas Hub, hosts see an **82% reduction** in their workload at night,
+> and an average increase of **0.4 stars** on their Airbnb rating.
+> On Airbnb, that half-star difference translates directly into **28% more bookings** —
+> which is a significant increase in revenue."
 
-**[Point to the ROI block.]**
+**[Point to the ROI block on the left.]**
 
-> "Does it pay off?
-> One bad review costs about **500 euros** in lost bookings.
-> If Atlas Hub stops just **3 bad reviews per year** —
-> the hardware pays for itself. Completely."
+> "Now, the key question: does it pay off?
+> One bad review costs a host approximately **500 euros** in lost future bookings.
+> If Atlas Hub prevents just **3 bad reviews per year**,
+> the hardware has already paid for itself — completely, in year one.
+> From year two onwards, the host pays only **12 euros per month**, which is pure profit."
 
-**[Point to the pricing card.]**
+**[Point to the pricing card on the right.]**
 
-> "The price:
-> **1,500 euros one time** for the hardware.
-> **12 euros per month** — included in Atlas Stay Premium.
->
-> 15 million properties in Europe.
-> **The market is ready.**"
+> "The price is **1,500 euros** as a one-time hardware cost,
+> plus 12 euros per month bundled with Atlas Stay Premium —
+> our platform that is already live in Montpellier today.
+> With 15 million eligible properties across Europe, **the market is ready.**"
 
-**[Look at Youri. Both step forward.]**
+**[Look at Youri. Both step together for the conclusion.]**
 
 ---
 
 # SLIDE 8 — THANK YOU
 ## Both · ~15 sec
 
-**[Both stand. Video plays.]**
+**[Both stand. Video plays automatically. Youri speaks first.]**
 
 **YOURI:**
-> "To summarise —
-> Atlas Hub is an embedded AI robot
-> that solves a real problem: the 3AM guest experience.
-> Simple hardware. Powerful AI. Zero friction."
+> "To summarise — Atlas Hub is an embedded AI invention that solves
+> a very real and very costly problem: the 3AM guest experience.
+> Simple hardware, powerful intelligence, and zero friction for the guest."
 
 **LUIS:**
-> "Atlas Stay is already live in Montpellier.
-> Atlas Hub is the next step.
-> Thank you for listening — we are ready for your questions."
+> "It connects directly to Atlas Stay, our platform that is already deployed in Montpellier.
+> We believe Atlas Hub is ready for the next step — and so are we.
+> Thank you very much for your attention, and we are happy to answer your questions."
 
-**[Both stand still. Smile. Look at the jury. Wait.]**
+**[Both stand still. Smile. Make eye contact with the jury. Wait calmly.]**
 
 ---
 
@@ -273,90 +266,88 @@
 
 > **Remember:** Listen to the full question before you answer.
 > If you don't understand: *"Could you please repeat the question?"*
-> Keep answers under 40 seconds each.
-> Start with: *"That's a good question."* or *"I'm glad you asked."*
+> Keep answers under 40 seconds. Begin with: *"That's a good question."*
 
 ---
 
 ### TECHNICAL QUESTIONS · Youri answers
 
 **Q — Why did you use the ESP32-S3 and not a Raspberry Pi?**
-> "The ESP32-S3 costs about 5 euros and uses much less power.
-> All the heavy AI processing happens in the cloud, not on the robot.
-> So we don't need more power on the device.
-> This keeps the battery life long and the cost low."
+> "The ESP32-S3 costs about 5 euros and uses much less power than a Raspberry Pi.
+> Since all the heavy AI processing happens in the cloud over WiFi,
+> we don't need more computing power on the robot itself.
+> This keeps the hardware cost low and the battery life long."
 
 **Q — How does the robot avoid obstacles?**
-> "We use three ultrasonic sensors — front, left, and right.
-> They detect objects up to 4 meters away.
-> The ESP32 reads the distances and adjusts the motors to go around them."
+> "We use three HC-SR04 ultrasonic sensors placed at the front, front-left, and front-right.
+> They detect objects up to 4 meters away, and the ESP32 reads the distances
+> ten times per second to adjust the motor speed and steer around any obstacle."
 
 **Q — What if the WiFi goes down?**
-> "The robot switches to offline mode automatically.
-> Basic answers — WiFi password, checkout time, emergency contacts —
-> are stored on the ESP32 itself.
-> So Atlas Hub still works without internet."
+> "The robot automatically switches to an offline fallback mode.
+> Basic information — the WiFi password, checkout time, and emergency contacts —
+> is stored directly on the ESP32's flash memory,
+> so Atlas Hub continues to work even without an internet connection."
 
 **Q — How long does the battery last?**
-> "About 4 hours of active use.
-> In standby mode — parked and waiting — around 12 hours.
-> We are also designing a docking station so the robot recharges itself."
+> "About 4 hours of active use, when the robot is moving and speaking.
+> In standby mode — parked and waiting — it lasts around 12 hours.
+> We are also designing an automatic docking station so the robot recharges itself when it's not in use."
 
 **Q — How does the head rotation work?**
-> "An SG90 servo motor controls the head.
-> When the sensor detects a guest, the head turns toward them first.
-> Then the robot starts moving. It looks more natural that way."
+> "An SG90 servo motor controls the head rotation.
+> When the PIR sensor detects a guest, the head turns toward the detection zone first,
+> before the robot starts moving forward. This makes the interaction feel more natural and human."
 
 ---
 
 ### BUSINESS QUESTIONS · Luis answers
 
 **Q — Is 1,500 euros not too expensive?**
-> "For a single traveller — maybe.
-> But our customers are property managers with 5 to 20 apartments.
-> For them, it's a one-time investment per apartment.
-> If Atlas Hub stops just 3 bad reviews per year — each worth 500 euros —
-> it pays for itself in the first year."
+> "For an individual traveller, it might seem expensive — but that is not our target customer.
+> Our customers are professional property managers who handle 5 to 20 apartments at a time.
+> For them, it is a one-time investment per apartment, and if Atlas Hub prevents just
+> 3 bad reviews per year — each worth 500 euros in lost bookings —
+> it pays for itself completely within the first year."
 
 **Q — Who are your competitors?**
-> "Our main competitors are smart locks and QR code guides.
-> But they all need a phone.
-> No competitor today offers a physical AI robot that talks to the guest.
-> That is our main difference."
+> "Our main competitors today are smart locks and QR code information guides.
+> However, these solutions still require the guest to use their smartphone.
+> No competitor currently offers a physical, voice-interactive AI presence inside the apartment itself,
+> and that is our key difference."
 
 **Q — How does LEA know the apartment details?**
-> "The host fills in the Atlas Stay dashboard — WiFi, house rules, local tips.
-> It takes about 10 minutes.
-> This information is loaded into LEA before each check-in."
+> "The host fills in the Atlas Stay dashboard, which takes about 10 minutes.
+> They enter the WiFi password, house rules, local restaurant recommendations,
+> and emergency contacts — anything they want LEA to know.
+> This information is automatically loaded before each guest checks in."
 
-**Q — What about data privacy?**
-> "The robot only records audio when the guest speaks to it.
-> The audio is deleted right after the answer.
-> No voice data is kept. We follow GDPR rules."
+**Q — What about data privacy and GDPR?**
+> "Atlas Hub is fully GDPR compliant. The robot only records audio
+> after the guest speaks to it, and the audio is processed in the cloud
+> and deleted immediately after the response is generated.
+> No voice data is stored, and no personal information is kept."
 
 **Q — Is this a real product or just a concept?**
-> "Atlas Stay is already working in Montpellier today.
-> Atlas Hub is the next hardware step.
-> The electronics are fully designed and working.
-> We are ready to build the first real prototype."
+> "Atlas Stay is already deployed and working in Montpellier today, so the software platform is real.
+> Atlas Hub is the next hardware step, and the full electronics architecture
+> is designed and functional. We are ready to move to the prototype phase."
 
 ---
 
 ## EMERGENCY PHRASES
 
 If you lose your train of thought:
-> *"Let me rephrase that..."*
-> *"What I mean is..."*
-> *"In other words..."*
+> *"Let me rephrase that..."* / *"What I mean is..."* / *"In other words..."*
 
 If you don't understand a question:
-> *"I'm sorry — could you repeat the question please?"*
+> *"I'm sorry, could you please repeat the question?"*
 
-If the question is outside the project:
-> *"That's a great question — it's something we plan to work on next."*
+If the question is outside the project scope:
+> *"That's a great question — it is something we plan to explore in the next phase of development."*
 
-To buy time before answering:
-> *"Good question — let me think for a second..."*
+To gain time before answering:
+> *"That's a very interesting point..."* / *"Good question — let me think about that for a second."*
 
 ---
 
@@ -368,7 +359,7 @@ To buy time before answering:
 | < 2 sec    | Atlas Hub response time                     |
 | 38%        | Bad reviews caused by check-in problems     |
 | 67%        | Complaints between 10PM and 8AM             |
-| +0.4★      | Average Airbnb rating boost                 |
+| +0.4★      | Average Airbnb rating boost with Atlas Hub  |
 | +28%       | More bookings per half-star improvement     |
 | ↓82%       | Host workload reduction at night            |
 | 15M        | Short-term rentals in Europe                |
